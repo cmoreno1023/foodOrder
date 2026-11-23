@@ -1,0 +1,36 @@
+@model foodOrder.Models.Categoria
+
+@{
+    ViewData["Title"] = "Detalles de categoría";
+}
+
+<div class="container mt-4">
+    <h2>Detalles de la categoría</h2>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+
+            <dl class="row">
+                <dt class="col-sm-3">Código</dt>
+                <dd class="col-sm-9">@Model.IdCategoria</dd>
+
+                <dt class="col-sm-3">Nombre</dt>
+                <dd class="col-sm-9">@Model.Nombre</dd>
+
+                <dt class="col-sm-3">Descripción</dt>
+                <dd class="col-sm-9">@Model.Descripcion</dd>
+            </dl>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdCategoria"
+               class="btn btn-warning">
+                Editar
+            </a>
+
+            <a asp-action="Index" class="btn btn-secondary">
+                Volver
+            </a>
+
+        </div>
+    </div>
+</div>

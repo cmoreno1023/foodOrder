@@ -1,0 +1,34 @@
+@model foodOrder.Models.Pedido
+
+@{
+    ViewData["Title"] = "Detalles del pedido";
+}
+
+<div class="container mt-4">
+    <h2>Detalles del pedido</h2>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Código</dt>
+                <dd class="col-sm-9">@Model.IdPedido</dd>
+
+                <dt class="col-sm-3">Fecha</dt>
+                <dd class="col-sm-9">@Model.Fecha.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                <dt class="col-sm-3">Estado</dt>
+                <dd class="col-sm-9">@Model.Estado</dd>
+
+                <dt class="col-sm-3">Cliente</dt>
+                <dd class="col-sm-9">@Model.Cliente?.Nombre</dd>
+            </dl>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdPedido"
+               class="btn btn-warning">Editar</a>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">Volver</a>
+        </div>
+    </div>
+</div>

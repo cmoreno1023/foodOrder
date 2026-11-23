@@ -1,0 +1,34 @@
+@model foodOrder.Models.DetallePedido
+
+@{
+    ViewData["Title"] = "Editar detalle";
+}
+
+<h1>Editar detalle de pedido</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="IdDetalle" />
+
+    <div class="form-group mb-3">
+        <label asp-for="IdPedido">Pedido</label>
+        <select asp-for="IdPedido" class="form-control" asp-items="ViewBag.IdPedido"></select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="IdProducto">Producto</label>
+        <select asp-for="IdProducto" class="form-control" asp-items="ViewBag.IdProducto"></select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Cantidad">Cantidad</label>
+        <input asp-for="Cantidad" class="form-control" type="number" min="1" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PrecioUnitario">Precio unitario</label>
+        <input asp-for="PrecioUnitario" class="form-control" type="number" step="0.01" min="0" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</form>

@@ -1,0 +1,36 @@
+@model foodOrder.Models.DetallePedido
+
+@{
+    ViewData["Title"] = "Eliminar detalle";
+}
+
+<h1>Eliminar detalle de pedido</h1>
+
+<h4>¿Estás seguro de que deseas eliminar este detalle?</h4>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Número de detalle</dt>
+            <dd class="col-sm-9">@Model.IdDetalle</dd>
+
+            <dt class="col-sm-3">Pedido</dt>
+            <dd class="col-sm-9">@Model.IdPedido</dd>
+
+            <dt class="col-sm-3">Producto</dt>
+            <dd class="col-sm-9">@Model.Producto?.Nombre</dd>
+
+            <dt class="col-sm-3">Cantidad</dt>
+            <dd class="col-sm-9">@Model.Cantidad</dd>
+
+            <dt class="col-sm-3">Precio unitario</dt>
+            <dd class="col-sm-9">@Model.PrecioUnitario</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdDetalle" />
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>

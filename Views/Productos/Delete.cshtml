@@ -1,0 +1,37 @@
+@model foodOrder.Models.Producto
+
+@{
+    ViewData["Title"] = "Eliminar producto";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar producto</h2>
+
+    <div class="alert alert-warning mt-3">
+        ¿Estás seguro de que deseas eliminar este producto?
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <p><strong>Código:</strong> @Model.IdProducto</p>
+            <p><strong>Nombre:</strong> @Model.Nombre</p>
+            <p><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+            <p><strong>Stock:</strong> @Model.Stock</p>
+            <p><strong>Categoría:</strong> @Model.Categoria?.Nombre</p>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="IdProducto" />
+
+                <button type="submit" class="btn btn-danger">
+                    Sí, eliminar
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Cancelar
+                </a>
+            </form>
+
+        </div>
+    </div>
+</div>

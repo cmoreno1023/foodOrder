@@ -1,0 +1,41 @@
+@model foodOrder.Models.Cliente
+
+@{
+    ViewData["Title"] = "Nuevo cliente";
+}
+
+<div class="container mt-4">
+    <h2>Registrar nuevo cliente</h2>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label">Nombre completo</label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Telefono" class="form-label">Teléfono</label>
+                    <input asp-for="Telefono" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Correo" class="form-label">Correo electrónico</label>
+                    <input asp-for="Correo" class="form-control" />
+                    <span asp-validation-for="Correo" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Guardar cliente
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Volver
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

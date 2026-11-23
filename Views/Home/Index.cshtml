@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container mt-4">
+
+    <!-- ENCABEZADO -->
+    <div class="dashboard-header mb-5">
+        <div>
+            <h1>🍔 FoodOrder</h1>
+            <h4>Sistema de gestión de restaurante</h4>
+            <p>Bienvenido al panel administrativo. Gestiona tu restaurante desde aquí.</p>
+        </div>
+        <div class="dashboard-date">
+            <span>🍽️</span>
+            <p>Panel de administración</p>
+        </div>
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+    <h2 class="dashboard-title mb-4">Resumen general</h2>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-6 col-lg-3">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🍔</div>
+                <h5>Productos</h5>
+                <h2>@ViewBag.TotalProductos</h2>
+                <p>Productos registrados</p>
+                <a asp-controller="Productos" asp-action="Index" class="btn btn-dark">Ver productos</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">👥</div>
+                <h5>Clientes</h5>
+                <h2>@ViewBag.TotalClientes</h2>
+                <p>Clientes registrados</p>
+                <a asp-controller="Clientes" asp-action="Index" class="btn btn-dark">Ver clientes</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🛒</div>
+                <h5>Pedidos</h5>
+                <h2>@ViewBag.TotalPedidos</h2>
+                <p>Pedidos registrados</p>
+                <a asp-controller="Pedidos" asp-action="Index" class="btn btn-dark">Ver pedidos</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="dashboard-card">
+                <div class="dashboard-icon">🏷️</div>
+                <h5>Categorías</h5>
+                <h2>@ViewBag.TotalCategorias</h2>
+                <p>Categorías registradas</p>
+                <a asp-controller="Categorias" asp-action="Index" class="btn btn-dark">Ver categorías</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ACCESOS -->
+    <h2 class="dashboard-title mb-4">Gestión del restaurante</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-6">
+            <div class="dashboard-access">
+                <h4>📋 Detalles de pedidos</h4>
+                <p>Consulta los productos, cantidades y precios de cada pedido.</p>
+                <a asp-controller="DetallePedidos" asp-action="Index" class="btn btn-dark">Ver detalles</a>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="dashboard-access">
+                <h4>📦 Administración</h4>
+                <p>Organiza los productos, clientes y pedidos de tu restaurante.</p>
+                <a asp-controller="Productos" asp-action="Index" class="btn btn-dark">Administrar</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>

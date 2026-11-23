@@ -1,0 +1,35 @@
+@model foodOrder.Models.Categoria
+
+@{
+    ViewData["Title"] = "Eliminar categoría";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar categoría</h2>
+
+    <div class="alert alert-warning mt-3">
+        ¿Estás seguro de que deseas eliminar esta categoría?
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            <p><strong>Código:</strong> @Model.IdCategoria</p>
+            <p><strong>Nombre:</strong> @Model.Nombre</p>
+            <p><strong>Descripción:</strong> @Model.Descripcion</p>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="IdCategoria" />
+
+                <button type="submit" class="btn btn-danger">
+                    Sí, eliminar
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Cancelar
+                </a>
+            </form>
+
+        </div>
+    </div>
+</div>

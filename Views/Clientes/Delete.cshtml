@@ -1,0 +1,41 @@
+@model foodOrder.Models.Cliente
+
+@{
+    ViewData["Title"] = "Eliminar cliente";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar cliente</h2>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h5>¿Estás seguro de que deseas eliminar este cliente?</h5>
+
+            <dl class="row mt-3">
+                <dt class="col-sm-3">Código</dt>
+                <dd class="col-sm-9">@Model.IdCliente</dd>
+
+                <dt class="col-sm-3">Nombre</dt>
+                <dd class="col-sm-9">@Model.Nombre</dd>
+
+                <dt class="col-sm-3">Teléfono</dt>
+                <dd class="col-sm-9">@Model.Telefono</dd>
+
+                <dt class="col-sm-3">Correo</dt>
+                <dd class="col-sm-9">@Model.Correo</dd>
+            </dl>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="IdCliente" />
+
+                <button type="submit" class="btn btn-danger">
+                    Confirmar eliminación
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Cancelar
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
